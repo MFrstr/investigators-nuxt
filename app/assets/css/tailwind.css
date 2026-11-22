@@ -1,0 +1,82 @@
+@import "tailwindcss";
+
+@theme {
+  --spacing: 4px;
+  --shadow-default: 0 4px 30px rgba(0, 0, 0, 0.1);
+  --color-bg-button: #1f0118;
+  --color-base-content: #FEFEFE;
+  --color-white: #FEFEFE;
+  --color-deep-purple: #1f0118;
+  --color-deep-violet: #140337;
+  --color-deep-blue: #011028;
+  --color-neutral: #1A1A1D;
+  --font-kantumruy: "Kantumruy Pro", sans-serif;
+}
+
+@layer components {
+    body {
+        @apply py-6 min-h-screen bg-neutral text-base-content;
+    }
+
+    a {
+        @apply text-base no-underline font-kantumruy;
+
+    }
+
+    h1, h2, h3, h4, h5, h6, div, p, span {
+        @apply text-base-content font-kantumruy;
+    }
+
+    h1 {
+        @apply text-3xl mb-4 font-semibold;
+    }
+
+    h2 {
+        @apply text-2xl mb-2 font-semibold;
+    }
+
+    h3 {
+        @apply text-base lg:text-lg mb-2 font-semibold;
+    }
+
+    h4 {
+        @apply text-xl mb-2 font-semibold;
+    }
+
+    .btn {
+        @apply font-semibold p-2 cursor-pointer border border-white/15 rounded-xs;
+    }
+
+    .btn-primary {
+        @apply border-white/50 text-lg bg-linear-to-bl from-violet-500 to-purple-500 hover:from-violet-600 hover:to-purple-600 active:from-violet-700 active:to-purple-800;
+    }
+
+    .btn-outline {
+        @apply flex items-center justify-center text-base-content shadow-default mb-2 md:mr-2 md:mb-0 hover:bg-white/15 active:border-white/50;
+    }
+
+    .btn-outline.active {
+        @apply border-white/50 bg-white/15;
+    }
+
+    .card {
+        @apply flex p-3 aspect-1/1 rounded-xs border border-white/15 bg-white/15 hover:bg-white/25 shadow-default backdrop-blur-xs;
+    }
+
+
+    @font-face {
+        font-family: Kantumruy Pro;
+        font-style: normal;
+        font-weight: 400;
+        font-display: swap;
+        src: url(".././public/fonts/KantumruyPro-Regular.ttf") format("ttf");
+    }
+
+    @font-face {
+        font-family: Kantumruy Pro;
+        font-style: normal;
+        font-weight: 600;
+        font-display: swap;
+        src: url(".././public/fonts/KantumruyPro-SemiBold.ttf") format("ttf");
+    }
+}
